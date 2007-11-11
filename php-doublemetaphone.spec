@@ -5,10 +5,10 @@
 Summary:	Provide Double Metaphone functionality
 Name:		php-%{modname}
 Version:	0.1.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/archive
+URL:		http://pecl.php.net/package/doublemetaphone
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
@@ -57,6 +57,18 @@ cat > %{buildroot}%{_sysconfdir}/php.d/%{inifile} << EOF
 extension = %{soname}
 EOF
 
+%post
+if [ -f /var/lock/subsys/httpd ]; then
+    %{_initrddir}/httpd restart >/dev/null || :
+fi
+
+%postun
+if [ "$1" = "0" ]; then
+    if [ -f /var/lock/subsys/httpd ]; then
+	%{_initrddir}/httpd restart >/dev/null || :
+    fi
+fi
+
 %clean
 rm -rf %{buildroot}
 
@@ -65,4 +77,3 @@ rm -rf %{buildroot}
 %doc package*.xml
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
