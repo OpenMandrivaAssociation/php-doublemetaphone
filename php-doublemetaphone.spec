@@ -14,6 +14,7 @@ Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	file
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 The Double Metaphone algorithm by Lawrence Philips allows a word to be
