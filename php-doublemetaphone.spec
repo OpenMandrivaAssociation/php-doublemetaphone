@@ -4,8 +4,8 @@
 
 Summary:	Provide Double Metaphone functionality
 Name:		php-%{modname}
-Version:	0.1.2
-Release:	%mkrel 3
+Version:	0.2.0
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/doublemetaphone
