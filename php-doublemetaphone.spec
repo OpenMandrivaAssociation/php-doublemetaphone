@@ -6,7 +6,7 @@ Summary:	Provide Double Metaphone functionality
 
 Name:		php-%{modname}
 Version:	1.0.1
-Release:	1
+Release:	2
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/doublemetaphone
