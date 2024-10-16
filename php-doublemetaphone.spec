@@ -9,7 +9,7 @@ Version:	1.0.1
 Release:	2
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/doublemetaphone
+URL:		https://pecl.php.net/package/doublemetaphone
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
